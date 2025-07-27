@@ -1,0 +1,55 @@
+{
+  "name": "Potion of Stability",
+  "type": "consumable",
+  "_id": "dvL8oaxpEF6jKvYN",
+  "img": "icons/consumables/potions/bottle-conical-corked-labeled-shell-cyan.webp",
+  "system": {
+    "description": "<p>You can drink this potion to choose one additional downtime move.</p>",
+    "quantity": 1,
+    "actions": {
+      "ifj42z5FhfMVyyd1": {
+        "type": "effect",
+        "_id": "ifj42z5FhfMVyyd1",
+        "systemPath": "actions",
+        "description": "",
+        "chatDisplay": true,
+        "actionType": "action",
+        "cost": [],
+        "uses": {
+          "value": null,
+          "max": null,
+          "recovery": null
+        },
+        "effects": [],
+        "target": {
+          "type": null,
+          "amount": null
+        },
+        "name": "Drink",
+        "img": "icons/consumables/potions/bottle-conical-corked-labeled-shell-cyan.webp",
+        "range": ""
+      }
+    },
+    "consumeOnUse": false
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "OFxauskoxcvVTVNA": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.344",
+    "systemId": "daggerheart",
+    "systemVersion": "0.0.1",
+    "createdTime": 1753588038000,
+    "modifiedTime": 1753588692107,
+    "lastModifiedBy": "OFxauskoxcvVTVNA"
+  },
+  "_key": "!items!dvL8oaxpEF6jKvYN"
+}
