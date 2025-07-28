@@ -146,6 +146,15 @@
             "flags": {}
         },
         {
+            "name": "summons",
+            "label": "Summons",
+            "system": "daggerheart",
+            "path": "packs/summons.db",
+            "type": "Actor",
+            "private": false,
+            "flags": {}
+        },
+        {
             "name": "beastforms",
             "label": "Beastforms",
             "system": "daggerheart",
