@@ -1,0 +1,33 @@
+{
+  "folder": "Br5kHZnnjGzz4RJ9",
+  "name": "Maestro",
+  "type": "feature",
+  "_id": "c6kz0r85oQ6G7eaZ",
+  "img": "icons/weapons/wands/wand-star-white.webp",
+  "system": {
+    "description": "<p>Your rallying songs steel the courage of those who listen. When you give a <strong>Rally Die</strong> to an ally, they can <strong>gain a Hope</strong> or <strong>clear a Stress</strong>.</p>",
+    "resource": null,
+    "actions": {},
+    "originItemType": null,
+    "originId": null
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "LgnbNMLaxandgMQq": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.346",
+    "systemId": "daggerheart",
+    "systemVersion": "0.0.1",
+    "createdTime": 1754070617627,
+    "modifiedTime": 1754164493805,
+    "lastModifiedBy": "LgnbNMLaxandgMQq"
+  },
+  "_key": "!items!c6kz0r85oQ6G7eaZ"
+}

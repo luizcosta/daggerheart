@@ -1,6 +1,6 @@
 {
   "name": "Astral Projection",
-  "img": "systems/daggerheart/assets/icons/domains/grace.svg",
+  "img": "icons/svg/item-bag.svg",
   "type": "domainCard",
   "folder": "7O1tTswJMNdPgLsx",
   "system": {
@@ -8,57 +8,22 @@
     "domain": "grace",
     "recallCost": 0,
     "level": 8,
-    "type": "spell",
-    "actions": {
-      "jhEOXtmSiwm4AX1R": {
-        "type": "effect",
-        "_id": "jhEOXtmSiwm4AX1R",
-        "systemPath": "actions",
-        "description": "",
-        "chatDisplay": true,
-        "actionType": "action",
-        "cost": [
-          {
-            "scalable": false,
-            "key": "stress",
-            "value": 1,
-            "keyIsID": false,
-            "step": null
-          }
-        ],
-        "uses": {
-          "value": null,
-          "max": "1",
-          "recovery": "longRest"
-        },
-        "effects": [],
-        "target": {
-          "type": "any",
-          "amount": null
-        },
-        "name": "Project",
-        "img": "systems/daggerheart/assets/icons/domains/grace.svg",
-        "range": ""
-      }
-    }
+    "type": "spell"
   },
   "flags": {},
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.346",
+    "coreVersion": "13.344",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784409,
-    "modifiedTime": 1754106928035,
-    "lastModifiedBy": "Q9NoTaEarn3VMS6Z"
+    "modifiedTime": 1753922784409,
+    "lastModifiedBy": "WafZqd6qLGpBRGTt"
   },
   "_id": "YNOCNmZ96sCp9NEr",
   "sort": 3400000,
   "effects": [],
-  "ownership": {
-    "default": 0
-  },
   "_key": "!items!YNOCNmZ96sCp9NEr"
 }

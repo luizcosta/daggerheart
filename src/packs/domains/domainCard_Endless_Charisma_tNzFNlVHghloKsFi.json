@@ -1,6 +1,6 @@
 {
   "name": "Endless Charisma",
-  "img": "systems/daggerheart/assets/icons/domains/grace.svg",
+  "img": "icons/svg/item-bag.svg",
   "type": "domainCard",
   "folder": "W81LnTWzwmoaycTl",
   "system": {
@@ -8,57 +8,22 @@
     "domain": "grace",
     "recallCost": 1,
     "level": 7,
-    "type": "ability",
-    "actions": {
-      "EPhd2d8lHEnBd1pO": {
-        "type": "effect",
-        "_id": "EPhd2d8lHEnBd1pO",
-        "systemPath": "actions",
-        "description": "",
-        "chatDisplay": true,
-        "actionType": "action",
-        "cost": [
-          {
-            "keyIsID": false,
-            "key": "hope",
-            "value": 1,
-            "scalable": false,
-            "step": null
-          }
-        ],
-        "uses": {
-          "value": null,
-          "max": "",
-          "recovery": null
-        },
-        "effects": [],
-        "target": {
-          "type": "any",
-          "amount": null
-        },
-        "name": "Spend Hope to Reroll",
-        "img": "systems/daggerheart/assets/icons/domains/grace.svg",
-        "range": ""
-      }
-    }
+    "type": "ability"
   },
   "flags": {},
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.346",
+    "coreVersion": "13.344",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784450,
-    "modifiedTime": 1754106238885,
-    "lastModifiedBy": "Q9NoTaEarn3VMS6Z"
+    "modifiedTime": 1753922784450,
+    "lastModifiedBy": "WafZqd6qLGpBRGTt"
   },
   "_id": "tNzFNlVHghloKsFi",
   "sort": 3400000,
   "effects": [],
-  "ownership": {
-    "default": 0
-  },
   "_key": "!items!tNzFNlVHghloKsFi"
 }

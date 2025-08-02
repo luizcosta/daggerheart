@@ -1,6 +1,6 @@
 {
   "name": "Copycat",
-  "img": "systems/daggerheart/assets/icons/domains/grace.svg",
+  "img": "icons/svg/item-bag.svg",
   "type": "domainCard",
   "folder": "yFcD1LOM3xKbkNYl",
   "system": {
@@ -15,18 +15,15 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.346",
+    "coreVersion": "13.344",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784439,
-    "modifiedTime": 1754093678683,
-    "lastModifiedBy": "Q9NoTaEarn3VMS6Z"
+    "modifiedTime": 1753922784439,
+    "lastModifiedBy": "WafZqd6qLGpBRGTt"
   },
   "_id": "3A7LZ1xmDEMGa165",
   "sort": 3400000,
   "effects": [],
-  "ownership": {
-    "default": 0
-  },
   "_key": "!items!3A7LZ1xmDEMGa165"
 }

@@ -1,0 +1,83 @@
+{
+  "name": "Bard",
+  "type": "class",
+  "_id": "o6r3247cygQQXaHT",
+  "img": "icons/tools/instruments/harp-red.webp",
+  "system": {
+    "description": "<p><strong>Note: At level 5 use Rally (Level 5) instead of Rally under class feature. (Automation will be implemented in a later release)</strong></p><p><br />Bards are the most charismatic people in all the realms. Members of this class are masters of captivation and specialize in a variety of performance types, including singing, playing musical instruments, weaving tales, or telling jokes. Whether performing for an audience or speaking to an individual, bards thrive in social situations. Members of this profession bond and train at schools or guilds, but a current of egotism runs through those of the bardic persuasion. While they may be the most likely class to bring people together, a bard of ill temper can just as easily tear a party apart.</p>",
+    "domains": [
+      "grace",
+      "codex"
+    ],
+    "classItems": [],
+    "hitPoints": 5,
+    "evasion": 10,
+    "features": [
+      {
+        "type": "hope",
+        "item": "Compendium.daggerheart.classes.Item.OxmucTHHfuBSv2dn"
+      },
+      {
+        "type": "class",
+        "item": "Compendium.daggerheart.classes.Item.Y7waM3ljoRLyk38N"
+      },
+      {
+        "type": "class",
+        "item": "Compendium.daggerheart.classes.Item.oxv0m8AFUQVFKtZ4"
+      }
+    ],
+    "subclasses": [
+      "Compendium.daggerheart.subclasses.Item.kGBXtPewVSnNDbW2",
+      "Compendium.daggerheart.subclasses.Item.caHuWEjxMUNDcxMY"
+    ],
+    "inventory": {
+      "take": [
+        "Compendium.daggerheart.classes.Item.KF2oCpxX8s9jcvWT",
+        "Compendium.daggerheart.classes.Item.HYZsniIrzcaLfz15",
+        "Compendium.daggerheart.classes.Item.YCcnP3NsSEYh0jNh"
+      ],
+      "choiceA": [
+        "Compendium.daggerheart.consumables.Item.tPfKtKRRjv8qdSqy",
+        "Compendium.daggerheart.consumables.Item.b6vGSPFWOlzZZDLO"
+      ],
+      "choiceB": [
+        "Compendium.daggerheart.classes.Item.fkfn1pk4evHl9rsX",
+        "Compendium.daggerheart.classes.Item.z5NCi87SkY5oCOwW"
+      ]
+    },
+    "characterGuide": {
+      "suggestedTraits": {
+        "agility": 0,
+        "strength": -1,
+        "finesse": 1,
+        "instinct": 0,
+        "presence": 2,
+        "knowledge": 1
+      },
+      "suggestedPrimaryWeapon": "Compendium.daggerheart.weapons.Item.zkAgEW6zMkRZalEm",
+      "suggestedSecondaryWeapon": "Compendium.daggerheart.weapons.Item.wKklDxs5nkzILNp4",
+      "suggestedArmor": "Compendium.daggerheart.armors.Item.yJFp1bfpecDcStVK"
+    },
+    "isMulticlass": false
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "LgnbNMLaxandgMQq": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.346",
+    "systemId": "daggerheart",
+    "systemVersion": "0.0.1",
+    "createdTime": 1754169260406,
+    "modifiedTime": 1754170877528,
+    "lastModifiedBy": "LgnbNMLaxandgMQq"
+  },
+  "_key": "!items!o6r3247cygQQXaHT"
+}

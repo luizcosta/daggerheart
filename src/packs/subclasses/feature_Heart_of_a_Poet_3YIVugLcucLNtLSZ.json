@@ -1,0 +1,64 @@
+{
+  "folder": "QBeb6IqRnhTXzRtd",
+  "name": "Heart of a Poet",
+  "type": "feature",
+  "_id": "3YIVugLcucLNtLSZ",
+  "img": "icons/magic/life/heart-hand-gold-green.webp",
+  "system": {
+    "description": "<p>After you make an action roll to impress, persuade, or offend someone, you can spend a Hope to add a d4 to the roll.</p>",
+    "resource": null,
+    "actions": {
+      "pHSfMDmfVQSgqk39": {
+        "type": "effect",
+        "_id": "pHSfMDmfVQSgqk39",
+        "systemPath": "actions",
+        "description": "<p>After you make an action roll to impress, persuade, or offend someone, you can spend a Hope to add a d4 to the roll.</p>",
+        "chatDisplay": true,
+        "actionType": "action",
+        "cost": [
+          {
+            "keyIsID": false,
+            "key": "hope",
+            "value": 1,
+            "scalable": false,
+            "step": null
+          }
+        ],
+        "uses": {
+          "value": null,
+          "max": "",
+          "recovery": null
+        },
+        "effects": [],
+        "target": {
+          "type": "any",
+          "amount": null
+        },
+        "name": "Spend Hope",
+        "img": "icons/commodities/currency/coin-embossed-ruby-gold.webp",
+        "range": ""
+      }
+    },
+    "originItemType": null,
+    "originId": null
+  },
+  "effects": [],
+  "sort": 200000,
+  "ownership": {
+    "default": 0,
+    "LgnbNMLaxandgMQq": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.346",
+    "systemId": "daggerheart",
+    "systemVersion": "0.0.1",
+    "createdTime": 1754164982386,
+    "modifiedTime": 1754166129206,
+    "lastModifiedBy": "LgnbNMLaxandgMQq"
+  },
+  "_key": "!items!3YIVugLcucLNtLSZ"
+}

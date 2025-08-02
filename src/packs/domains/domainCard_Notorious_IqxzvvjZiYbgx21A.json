@@ -1,6 +1,6 @@
 {
   "name": "Notorious",
-  "img": "systems/daggerheart/assets/icons/domains/grace.svg",
+  "img": "icons/svg/item-bag.svg",
   "type": "domainCard",
   "folder": "wdhWWqWlPiBxtsvr",
   "system": {
@@ -8,57 +8,22 @@
     "domain": "grace",
     "recallCost": 0,
     "level": 10,
-    "type": "ability",
-    "actions": {
-      "Cb39VXOUPVWl3ea4": {
-        "type": "effect",
-        "_id": "Cb39VXOUPVWl3ea4",
-        "systemPath": "actions",
-        "description": "",
-        "chatDisplay": true,
-        "actionType": "action",
-        "cost": [
-          {
-            "scalable": false,
-            "key": "stress",
-            "value": 1,
-            "keyIsID": false,
-            "step": null
-          }
-        ],
-        "uses": {
-          "value": null,
-          "max": "",
-          "recovery": null
-        },
-        "effects": [],
-        "target": {
-          "type": "any",
-          "amount": null
-        },
-        "name": "Gain Bonus",
-        "img": "systems/daggerheart/assets/icons/domains/grace.svg",
-        "range": ""
-      }
-    }
+    "type": "ability"
   },
   "flags": {},
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.346",
+    "coreVersion": "13.344",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784489,
-    "modifiedTime": 1754107166411,
-    "lastModifiedBy": "Q9NoTaEarn3VMS6Z"
+    "modifiedTime": 1753922784489,
+    "lastModifiedBy": "WafZqd6qLGpBRGTt"
   },
   "_id": "IqxzvvjZiYbgx21A",
   "sort": 3400000,
   "effects": [],
-  "ownership": {
-    "default": 0
-  },
   "_key": "!items!IqxzvvjZiYbgx21A"
 }

@@ -1,0 +1,31 @@
+{
+  "folder": "rY8M3uLGRwuLhzk0",
+  "name": "Torch",
+  "type": "loot",
+  "_id": "YCcnP3NsSEYh0jNh",
+  "img": "icons/sundries/lights/torch-brown-lit.webp",
+  "system": {
+    "description": "",
+    "quantity": 1,
+    "actions": {}
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "LgnbNMLaxandgMQq": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.346",
+    "systemId": "daggerheart",
+    "systemVersion": "0.0.1",
+    "createdTime": 1754169939100,
+    "modifiedTime": 1754170673348,
+    "lastModifiedBy": "LgnbNMLaxandgMQq"
+  },
+  "_key": "!items!YCcnP3NsSEYh0jNh"
+}

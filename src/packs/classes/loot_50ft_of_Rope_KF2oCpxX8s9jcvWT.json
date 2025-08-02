@@ -1,0 +1,31 @@
+{
+  "folder": "rY8M3uLGRwuLhzk0",
+  "name": "50ft of Rope",
+  "type": "loot",
+  "_id": "KF2oCpxX8s9jcvWT",
+  "img": "icons/sundries/survival/rope-coiled-tan.webp",
+  "system": {
+    "description": "",
+    "quantity": 1,
+    "actions": {}
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "LgnbNMLaxandgMQq": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.346",
+    "systemId": "daggerheart",
+    "systemVersion": "0.0.1",
+    "createdTime": 1754170335621,
+    "modifiedTime": 1754170661701,
+    "lastModifiedBy": "LgnbNMLaxandgMQq"
+  },
+  "_key": "!items!KF2oCpxX8s9jcvWT"
+}

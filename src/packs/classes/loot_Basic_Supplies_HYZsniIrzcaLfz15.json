@@ -1,0 +1,31 @@
+{
+  "folder": "rY8M3uLGRwuLhzk0",
+  "name": "Basic Supplies",
+  "type": "loot",
+  "_id": "HYZsniIrzcaLfz15",
+  "img": "icons/containers/bags/sack-leather-stitched-brown.webp",
+  "system": {
+    "description": "",
+    "quantity": 1,
+    "actions": {}
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "LgnbNMLaxandgMQq": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.346",
+    "systemId": "daggerheart",
+    "systemVersion": "0.0.1",
+    "createdTime": 1754170467093,
+    "modifiedTime": 1754170667133,
+    "lastModifiedBy": "LgnbNMLaxandgMQq"
+  },
+  "_key": "!items!HYZsniIrzcaLfz15"
+}

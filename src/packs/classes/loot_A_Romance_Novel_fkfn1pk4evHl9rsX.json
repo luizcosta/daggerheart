@@ -1,0 +1,31 @@
+{
+  "folder": "7v4rk8aUOc9l81kD",
+  "name": "A Romance Novel",
+  "type": "loot",
+  "_id": "fkfn1pk4evHl9rsX",
+  "img": "icons/sundries/books/book-embossed-gold-red.webp",
+  "system": {
+    "description": "",
+    "quantity": 1,
+    "actions": {}
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "LgnbNMLaxandgMQq": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.346",
+    "systemId": "daggerheart",
+    "systemVersion": "0.0.1",
+    "createdTime": 1754168764252,
+    "modifiedTime": 1754170678074,
+    "lastModifiedBy": "LgnbNMLaxandgMQq"
+  },
+  "_key": "!items!fkfn1pk4evHl9rsX"
+}

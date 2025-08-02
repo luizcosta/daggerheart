@@ -1,0 +1,50 @@
+{
+  "name": "Wordsmith",
+  "type": "subclass",
+  "_id": "caHuWEjxMUNDcxMY",
+  "img": "icons/tools/scribal/ink-quill-red.webp",
+  "system": {
+    "description": "<p>You wish to use clever wordplay and captivate crowds.</p>",
+    "spellcastingTrait": null,
+    "features": [
+      {
+        "type": "foundation",
+        "item": "Compendium.daggerheart.subclasses.Item.iLytX899psvrPRnG"
+      },
+      {
+        "type": "foundation",
+        "item": "Compendium.daggerheart.subclasses.Item.3YIVugLcucLNtLSZ"
+      },
+      {
+        "type": "specialization",
+        "item": "Compendium.daggerheart.subclasses.Item.QaEinpTu6c1Tj859"
+      },
+      {
+        "type": "mastery",
+        "item": "Compendium.daggerheart.subclasses.Item.4dVLpWQ5SpAGnc5A"
+      }
+    ],
+    "featureState": 1,
+    "isMulticlass": false
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "LgnbNMLaxandgMQq": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.346",
+    "systemId": "daggerheart",
+    "systemVersion": "0.0.1",
+    "createdTime": 1754168663996,
+    "modifiedTime": 1754168731206,
+    "lastModifiedBy": "LgnbNMLaxandgMQq"
+  },
+  "_key": "!items!caHuWEjxMUNDcxMY"
+}
