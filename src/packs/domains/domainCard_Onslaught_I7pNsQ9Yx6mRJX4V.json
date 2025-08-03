@@ -1,6 +1,6 @@
 {
   "name": "Onslaught",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/blade.png",
   "type": "domainCard",
   "folder": "7pKKYgRQAKlQAksV",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784490,
-    "modifiedTime": 1753922784490,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754227560016,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "I7pNsQ9Yx6mRJX4V",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!I7pNsQ9Yx6mRJX4V"
 }

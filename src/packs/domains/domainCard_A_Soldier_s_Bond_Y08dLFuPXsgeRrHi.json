@@ -1,6 +1,6 @@
 {
   "name": "A Soldier’s Bond",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/blade.png",
   "type": "domainCard",
   "folder": "o7t2fsAmRxKLoHrO",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784407,
-    "modifiedTime": 1753922784407,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754227481028,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "Y08dLFuPXsgeRrHi",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!Y08dLFuPXsgeRrHi"
 }

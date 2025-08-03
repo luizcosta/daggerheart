@@ -1,6 +1,6 @@
 {
   "name": "Book of Yarrow",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/codex.png",
   "type": "domainCard",
   "folder": "IIVaYseNJbA2ta1B",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784429,
-    "modifiedTime": 1753922784429,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754227734157,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "J1ovx2FpNDvPq1o6",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!J1ovx2FpNDvPq1o6"
 }

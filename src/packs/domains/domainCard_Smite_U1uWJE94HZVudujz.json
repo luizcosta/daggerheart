@@ -1,6 +1,6 @@
 {
   "name": "Smite",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/splendor.png",
   "type": "domainCard",
   "folder": "Jbw6Teaha6So9tym",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784519,
-    "modifiedTime": 1753922784519,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754228067119,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "U1uWJE94HZVudujz",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!U1uWJE94HZVudujz"
 }

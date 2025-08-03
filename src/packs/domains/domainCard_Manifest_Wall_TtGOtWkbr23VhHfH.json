@@ -1,6 +1,6 @@
 {
   "name": "Manifest Wall",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/codex.png",
   "type": "domainCard",
   "folder": "pDtffkb0SMv1O8pL",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784479,
-    "modifiedTime": 1753922784479,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754227684377,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "TtGOtWkbr23VhHfH",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!TtGOtWkbr23VhHfH"
 }

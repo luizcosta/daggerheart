@@ -1,6 +1,6 @@
 {
   "name": "Healing Strike",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/splendor.png",
   "type": "domainCard",
   "folder": "Z6oglw8LIOrtBcN6",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784468,
-    "modifiedTime": 1753922784468,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754228056612,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "XtSc0jIJLOoMTMYS",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!XtSc0jIJLOoMTMYS"
 }

@@ -1,6 +1,6 @@
 {
   "name": "Teleport",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/codex.png",
   "type": "domainCard",
   "folder": "pDtffkb0SMv1O8pL",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784528,
-    "modifiedTime": 1753922784528,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754227681226,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "HnPwVrWblYa9hwSt",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!HnPwVrWblYa9hwSt"
 }

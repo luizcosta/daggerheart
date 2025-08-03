@@ -1,6 +1,6 @@
 {
   "name": "Falling Sky",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/arcana.png",
   "type": "domainCard",
   "folder": "7Cs44YADBTmmtCw6",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784452,
-    "modifiedTime": 1753922784452,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754227452879,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "hZJp9mdkMnqKDROe",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!hZJp9mdkMnqKDROe"
 }

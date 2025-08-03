@@ -1,6 +1,6 @@
 {
   "name": "Sigil of Retribution",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/codex.png",
   "type": "domainCard",
   "folder": "FcMclsLDy86EicA6",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784517,
-    "modifiedTime": 1753922784517,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754227758400,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "RiuN0lMlfoTAhLJz",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!RiuN0lMlfoTAhLJz"
 }

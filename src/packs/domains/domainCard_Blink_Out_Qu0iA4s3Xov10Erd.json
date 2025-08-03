@@ -1,6 +1,6 @@
 {
   "name": "Blink Out",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/arcana.png",
   "type": "domainCard",
   "folder": "1e5Sn8OXxEQ57GSD",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784416,
-    "modifiedTime": 1753922784416,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754227395194,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "Qu0iA4s3Xov10Erd",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!Qu0iA4s3Xov10Erd"
 }

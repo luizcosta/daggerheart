@@ -1,6 +1,6 @@
 {
   "name": "Know Thy Enemy",
-  "img": "icons/svg/item-bag.svg",
+  "img": "systems/daggerheart/assets/icons/domains/domain-card/bone.png",
   "type": "domainCard",
   "folder": "BQ1L4EiwOs84Xysp",
   "system": {
@@ -15,15 +15,18 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.344",
+    "coreVersion": "13.346",
     "systemId": "daggerheart",
     "systemVersion": "0.0.1",
     "createdTime": 1753922784475,
-    "modifiedTime": 1753922784475,
-    "lastModifiedBy": "WafZqd6qLGpBRGTt"
+    "modifiedTime": 1754227593068,
+    "lastModifiedBy": "l5jB3XmcVXOTQpRZ"
   },
   "_id": "O38MQMhJWdZnXi6b",
   "sort": 3400000,
   "effects": [],
+  "ownership": {
+    "default": 0
+  },
   "_key": "!items!O38MQMhJWdZnXi6b"
 }
