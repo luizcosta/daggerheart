@@ -1,5 +1,6 @@
 import { abilities } from '../../config/actorConfig.mjs';
 import { burden } from '../../config/generalConfig.mjs';
+import { ItemBrowser } from '../ui/itemBrowser.mjs';
 import { createEmbeddedItemsWithEffects, createEmbeddedItemWithEffects } from '../../helpers/utils.mjs';
 
 const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
@@ -42,6 +43,8 @@ export default class DhCharacterCreation extends HandlebarsApplicationMixin(Appl
         };
 
         this._dragDrop = this._createDragDropHandlers();
+
+        this.itemBrowser = null;
     }
 
     get title() {
@@ -491,8 +494,24 @@ export default class DhCharacterCreation extends HandlebarsApplicationMixin(Appl
         });
     }
 
-    static async viewCompendium(_, target) {
-        (await game.packs.get(`daggerheart.${target.dataset.compendium}`))?.render(true);
+    static async viewCompendium(event, target) {
+        const type = target.dataset.compendium ?? target.dataset.type;
+
+        const presets = {
+            compendium: 'daggerheart',
+            folder: type,
+            render: {
+                noFolder: true
+            }
+        };
+
+        if (type == 'domains')
+            presets.filter = {
+                'level.max': { key: 'level.max', value: 1 },
+                'system.domain': { key: 'system.domain', value: this.setup.class?.system.domains ?? null }
+            };
+
+        return (this.itemBrowser = await new ItemBrowser({ presets }).render({ force: true }));
     }
 
     static async viewItem(_, target) {
@@ -604,6 +623,7 @@ export default class DhCharacterCreation extends HandlebarsApplicationMixin(Appl
             { overwrite: true }
         );
 
+        if (this.itemBrowser) this.itemBrowser.close();
         this.close();
     }
 

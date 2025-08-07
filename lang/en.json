@@ -2361,6 +2361,7 @@
                 "diceIsRerolled": "The dice has been rerolled (x{times})",
                 "pendingSaves": "Pending Reaction Rolls",
                 "openSheetSettings": "Open Settings",
+                "compendiumBrowser": "Compendium Browser",
                 "rulesOn": "Rules On",
                 "rulesOff": "Rules Off",
                 "remainingUses": "Uses refresh on {type}"
