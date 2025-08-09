@@ -18,7 +18,6 @@ const targetsField = () =>
     );
 
 export default class DHActorRoll extends foundry.abstract.TypeDataModel {
-
     static defineSchema() {
         return {
             title: new fields.StringField(),
@@ -65,7 +64,7 @@ export default class DHActorRoll extends foundry.abstract.TypeDataModel {
     }
 
     set targetMode(mode) {
-        if(!this.parent.isAuthor) return;
+        if (!this.parent.isAuthor) return;
         this.parent.targetSelection = mode;
         this.registerTargetHook();
         this.updateTargets();
@@ -76,13 +75,14 @@ export default class DHActorRoll extends foundry.abstract.TypeDataModel {
     }
 
     async updateTargets() {
-        if(!ui.chat.collection.get(this.parent.id)) return;
+        if (!ui.chat.collection.get(this.parent.id)) return;
         let targets;
-        if(this.targetMode)
-            targets = this.targets;
+        if (this.targetMode) targets = this.targets;
         else
-            targets = Array.from(game.user.targets).map(t => game.system.api.fields.ActionFields.TargetField.formatTarget(t));
-        
+            targets = Array.from(game.user.targets).map(t =>
+                game.system.api.fields.ActionFields.TargetField.formatTarget(t)
+            );
+
         await this.parent.update({
             flags: {
                 [game.system.id]: {
@@ -90,16 +90,19 @@ export default class DHActorRoll extends foundry.abstract.TypeDataModel {
                     targetMode: this.targetMode
                 }
             }
-        })
+        });
     }
 
     registerTargetHook() {
-        if(!this.parent.isAuthor) return;
-        if(this.targetMode && this.parent.targetHook !== null) {
-            Hooks.off("targetToken", this.parent.targetHook);
-            return this.parent.targetHook = null;
+        if (!this.parent.isAuthor) return;
+        if (this.targetMode && this.parent.targetHook !== null) {
+            Hooks.off('targetToken', this.parent.targetHook);
+            return (this.parent.targetHook = null);
         } else if (!this.targetMode && this.parent.targetHook === null) {
-            return this.parent.targetHook = Hooks.on('targetToken', foundry.utils.debounce(this.updateTargets.bind(this), 50));
+            return (this.parent.targetHook = Hooks.on(
+                'targetToken',
+                foundry.utils.debounce(this.updateTargets.bind(this), 50)
+            ));
         }
     }
 
@@ -107,13 +110,16 @@ export default class DHActorRoll extends foundry.abstract.TypeDataModel {
         if (this.hasTarget) {
             this.hasHitTarget = this.targets.filter(t => t.hit === true).length > 0;
             this.currentTargets = this.getTargetList();
-            
-            if(this.targetMode === true && this.hasRoll) {
-                this.targetShort = this.targets.reduce((a,c) => {
-                    if(c.hit) a.hit += 1;
-                    else a.miss += 1;
-                    return a;
-                }, {hit: 0, miss: 0})
+
+            if (this.targetMode === true && this.hasRoll) {
+                this.targetShort = this.targets.reduce(
+                    (a, c) => {
+                        if (c.hit) a.hit += 1;
+                        else a.miss += 1;
+                        return a;
+                    },
+                    { hit: 0, miss: 0 }
+                );
             }
             if (this.hasSave) this.setPendingSaves();
         }
@@ -123,13 +129,16 @@ export default class DHActorRoll extends foundry.abstract.TypeDataModel {
     }
 
     getTargetList() {
-        const targets = this.targetMode && this.parent.isAuthor ? this.targets : (this.parent.getFlag(game.system.id, "targets") ?? this.targets),
-            reactionRolls = this.parent.getFlag(game.system.id, "reactionRolls");
+        const targets =
+                this.targetMode && this.parent.isAuthor
+                    ? this.targets
+                    : (this.parent.getFlag(game.system.id, 'targets') ?? this.targets),
+            reactionRolls = this.parent.getFlag(game.system.id, 'reactionRolls');
 
-        if(reactionRolls) {
+        if (reactionRolls) {
             Object.entries(reactionRolls).forEach(([k, r]) => {
                 const target = targets.find(t => t.id === k);
-                if(target) target.saved  = r;
+                if (target) target.saved = r;
             });
         }
 

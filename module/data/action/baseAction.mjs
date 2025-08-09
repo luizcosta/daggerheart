@@ -224,11 +224,11 @@ export default class DHBaseAction extends ActionMixin(foundry.abstract.DataModel
             .filter(
                 c =>
                     (!successCost && (!c.consumeOnSuccess || config.roll?.success)) ||
-                        (successCost && c.consumeOnSuccess)
+                    (successCost && c.consumeOnSuccess)
             )
             .reduce((a, c) => {
                 const resource = usefulResources[c.key];
-                if( resource ) {
+                if (resource) {
                     a.push({
                         key: c.key,
                         value: (c.total ?? c.value) * (resource.isReversed ? 1 : -1),
@@ -247,9 +247,9 @@ export default class DHBaseAction extends ActionMixin(foundry.abstract.DataModel
         )
             this.update({ 'uses.value': this.uses.value + 1 });
 
-        if(config.roll?.success || successCost) {
+        if (config.roll?.success || successCost) {
             setTimeout(() => {
-                (config.message ?? config.parent).update({'system.successConsumed': true})
+                (config.message ?? config.parent).update({ 'system.successConsumed': true });
             }, 50);
         }
     }
@@ -371,11 +371,11 @@ export default class DHBaseAction extends ActionMixin(foundry.abstract.DataModel
     async updateChatMessage(message, targetId, changes, chain = true) {
         setTimeout(async () => {
             const chatMessage = ui.chat.collection.get(message._id);
-            
+
             await chatMessage.update({
                 flags: {
                     [game.system.id]: {
-                        "reactionRolls": {
+                        reactionRolls: {
                             [targetId]: changes
                         }
                     }

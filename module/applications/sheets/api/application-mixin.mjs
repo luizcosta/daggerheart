@@ -344,7 +344,7 @@ export default function DHApplicationMixin(Base) {
                     callback: async (target, event) => {
                         const doc = await getDocFromElement(target),
                             action = doc?.system?.attack ?? doc;
-                        return action && action.use(event, { byPassRoll: true })
+                        return action && action.use(event, { byPassRoll: true });
                     }
                 });
 

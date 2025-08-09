@@ -644,7 +644,7 @@ export default class DhpActor extends Actor {
                         );
                         break;
                     case 'armor':
-                        if(this.system.armor?.system?.marks) {
+                        if (this.system.armor?.system?.marks) {
                             updates.armor.resources['system.marks.value'] = Math.max(
                                 Math.min(this.system.armor.system.marks.value + r.value, this.system.armorScore),
                                 0
@@ -652,9 +652,12 @@ export default class DhpActor extends Actor {
                         }
                         break;
                     default:
-                        if(this.system.resources?.[r.key]) {
+                        if (this.system.resources?.[r.key]) {
                             updates.actor.resources[`system.resources.${r.key}.value`] = Math.max(
-                                Math.min(this.system.resources[r.key].value + r.value, this.system.resources[r.key].max),
+                                Math.min(
+                                    this.system.resources[r.key].value + r.value,
+                                    this.system.resources[r.key].max
+                                ),
                                 0
                             );
                         }

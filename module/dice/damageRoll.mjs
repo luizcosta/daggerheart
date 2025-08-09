@@ -29,7 +29,9 @@ export default class DamageRoll extends DHRoll {
     }
 
     static async buildPost(roll, config, message) {
-        const chatMessage = config.source?.message ? ui.chat.collection.get(config.source.message) : getDocumentClass('ChatMessage').applyRollMode({}, config.rollMode);
+        const chatMessage = config.source?.message
+            ? ui.chat.collection.get(config.source.message)
+            : getDocumentClass('ChatMessage').applyRollMode({}, config.rollMode);
         if (game.modules.get('dice-so-nice')?.active) {
             const pool = foundry.dice.terms.PoolTerm.fromRolls(
                     Object.values(config.damage).flatMap(r => r.parts.map(p => p.roll))
@@ -120,11 +122,10 @@ export default class DamageRoll extends DHRoll {
         }
 
         /* To Remove When Reaction System */
-        if(index === 0 && part.applyTo === CONFIG.DH.GENERAL.healingTypes.hitPoints.id) {
-            for(const mod in config.modifiers) {
+        if (index === 0 && part.applyTo === CONFIG.DH.GENERAL.healingTypes.hitPoints.id) {
+            for (const mod in config.modifiers) {
                 const modifier = config.modifiers[mod];
-                if(modifier.beforeCrit === true && (modifier.enabled || modifier.value))
-                    modifier.callback(part);
+                if (modifier.beforeCrit === true && (modifier.enabled || modifier.value)) modifier.callback(part);
             }
         }
 
@@ -142,11 +143,10 @@ export default class DamageRoll extends DHRoll {
         }
 
         /* To Remove When Reaction System */
-        if(index === 0 && part.applyTo === CONFIG.DH.GENERAL.healingTypes.hitPoints.id) {
-            for(const mod in config.modifiers) {
+        if (index === 0 && part.applyTo === CONFIG.DH.GENERAL.healingTypes.hitPoints.id) {
+            for (const mod in config.modifiers) {
                 const modifier = config.modifiers[mod];
-                if(!modifier.beforeCrit && (modifier.enabled || modifier.value))
-                    modifier.callback(part);
+                if (!modifier.beforeCrit && (modifier.enabled || modifier.value)) modifier.callback(part);
             }
         }
 
@@ -156,11 +156,11 @@ export default class DamageRoll extends DHRoll {
     /* To Remove When Reaction System */
     static temporaryModifierBuilder(config) {
         const mods = {};
-        if(config.data?.parent) {
-            if(config.data.parent.appliedEffects) {
+        if (config.data?.parent) {
+            if (config.data.parent.appliedEffects) {
                 // Bardic Rally
                 mods.rally = {
-                    label: "DAGGERHEART.CLASS.Feature.rallyDice",
+                    label: 'DAGGERHEART.CLASS.Feature.rallyDice',
                     values: config.data?.parent?.appliedEffects.reduce((a, c) => {
                         const change = c.changes.find(ch => ch.key === 'system.bonuses.rally');
                         if (change) a.push({ value: c.id, label: change.value });
@@ -168,8 +168,10 @@ export default class DamageRoll extends DHRoll {
                     }, []),
                     value: null,
                     beforeCrit: true,
-                    callback: (part) => {
-                        const rallyFaces = config.modifiers.rally.values.find(r => r.value === config.modifiers.rally.value)?.label;
+                    callback: part => {
+                        const rallyFaces = config.modifiers.rally.values.find(
+                            r => r.value === config.modifiers.rally.value
+                        )?.label;
                         part.roll.terms.push(
                             new foundry.dice.terms.OperatorTerm({ operator: '+' }),
                             ...this.parse(`1${rallyFaces}`)
@@ -177,58 +179,58 @@ export default class DamageRoll extends DHRoll {
                     }
                 };
             }
-            
+
             const item = config.data.parent.items?.get(config.source.item);
-            if(item) {
+            if (item) {
                 // Massive (Weapon Feature)
-                if(item.system.itemFeatures.find(f => f.value === "massive"))
+                if (item.system.itemFeatures.find(f => f.value === 'massive'))
                     mods.massive = {
                         label: CONFIG.DH.ITEM.weaponFeatures.massive.label,
                         enabled: true,
-                        callback: (part) => {
+                        callback: part => {
                             part.roll.terms[0].modifiers.push(`kh${part.roll.terms[0].number}`);
                             part.roll.terms[0].number += 1;
                         }
                     };
 
                 // Powerful (Weapon Feature)
-                if(item.system.itemFeatures.find(f => f.value === "powerful"))
+                if (item.system.itemFeatures.find(f => f.value === 'powerful'))
                     mods.powerful = {
                         label: CONFIG.DH.ITEM.weaponFeatures.powerful.label,
                         enabled: true,
-                        callback: (part) => {
+                        callback: part => {
                             part.roll.terms[0].modifiers.push(`kh${part.roll.terms[0].number}`);
                             part.roll.terms[0].number += 1;
                         }
                     };
 
                 // Brutal (Weapon Feature)
-                if(item.system.itemFeatures.find(f => f.value === "brutal"))
+                if (item.system.itemFeatures.find(f => f.value === 'brutal'))
                     mods.brutal = {
                         label: CONFIG.DH.ITEM.weaponFeatures.brutal.label,
                         enabled: true,
                         beforeCrit: true,
-                        callback: (part) => {
+                        callback: part => {
                             part.roll.terms[0].modifiers.push(`x${part.roll.terms[0].faces}`);
                         }
                     };
-                
+
                 // Serrated (Weapon Feature)
-                if(item.system.itemFeatures.find(f => f.value === "serrated"))
+                if (item.system.itemFeatures.find(f => f.value === 'serrated'))
                     mods.serrated = {
                         label: CONFIG.DH.ITEM.weaponFeatures.serrated.label,
                         enabled: true,
-                        callback: (part) => {
+                        callback: part => {
                             part.roll.terms[0].modifiers.push(`sc8`);
                         }
                     };
-                
+
                 // Self-Correcting (Weapon Feature)
-                if(item.system.itemFeatures.find(f => f.value === "selfCorrecting"))
+                if (item.system.itemFeatures.find(f => f.value === 'selfCorrecting'))
                     mods.selfCorrecting = {
                         label: CONFIG.DH.ITEM.weaponFeatures.selfCorrecting.label,
                         enabled: true,
-                        callback: (part) => {
+                        callback: part => {
                             part.roll.terms[0].modifiers.push(`sc6`);
                         }
                     };
@@ -237,5 +239,91 @@ export default class DamageRoll extends DHRoll {
 
         config.modifiers = mods;
         return mods;
+    }
+
+    static async reroll(target, message) {
+        const { damageType, part, dice, result } = target.dataset;
+        const rollPart = message.system.damage[damageType].parts[part];
+
+        let diceIndex = 0;
+        let parsedRoll = game.system.api.dice.DamageRoll.fromData({
+            ...rollPart.roll,
+            terms: rollPart.roll.terms.map(term => {
+                const isDie = term.class === 'Die';
+                const fixedTerm = {
+                    ...term,
+                    ...(isDie ? { results: rollPart.dice[diceIndex].results } : {})
+                };
+
+                if (isDie) diceIndex++;
+                return fixedTerm;
+            }),
+            class: 'DamageRoll',
+            evaluated: false
+        });
+
+        const parsedDiceTerms = Object.keys(parsedRoll.terms).reduce((acc, key) => {
+            const term = parsedRoll.terms[key];
+            if (term instanceof CONFIG.Dice.termTypes.DiceTerm) acc[Object.keys(acc).length] = term;
+            return acc;
+        }, {});
+        const term = parsedDiceTerms[dice];
+        const termResult = parsedDiceTerms[dice].results[result];
+
+        const newIndex = parsedDiceTerms[dice].results.length;
+        await term.reroll(`/r1=${termResult.result}`);
+
+        if (game.modules.get('dice-so-nice')?.active) {
+            const newResult = parsedDiceTerms[dice].results[newIndex];
+            const diceSoNiceRoll = {
+                _evaluated: true,
+                dice: [
+                    new foundry.dice.terms.Die({
+                        ...term,
+                        total: newResult.result,
+                        faces: term._faces,
+                        results: [newResult]
+                    })
+                ],
+                options: { appearance: {} }
+            };
+
+            await game.dice3d.showForRoll(diceSoNiceRoll, game.user, true);
+        }
+
+        await parsedRoll.evaluate();
+
+        const results = parsedRoll.dice[dice].results.map(result => ({
+            ...result,
+            discarded: !result.active
+        }));
+        const newResult = results.splice(results.length - 1, 1);
+        results.splice(Number(result) + 1, 0, newResult[0]);
+
+        const rerolledDice = parsedRoll.dice.map((x, index) => {
+            const isRerollDice = index === Number(dice);
+            if (!isRerollDice) return { ...x, dice: x.denomination };
+            return {
+                dice: parsedRoll.dice[dice].denomination,
+                total: parsedRoll.dice[dice].total,
+                results: results.map(result => ({
+                    ...result,
+                    hasRerolls: result.hasRerolls || isRerollDice
+                }))
+            };
+        });
+
+        const updateMessage = game.messages.get(message._id);
+        await updateMessage.update({
+            [`system.damage.${damageType}`]: {
+                ...updateMessage,
+                total: parsedRoll.total,
+                [`parts.${part}`]: {
+                    ...rollPart,
+                    total: parsedRoll.total,
+                    dice: rerolledDice
+                }
+            }
+        });
     }
 }
