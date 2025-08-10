@@ -1763,6 +1763,7 @@
                 "weapon": "Range Increase: Weapon"
             },
             "RefreshType": {
+                "scene": "Scene",
                 "session": "Session",
                 "shortrest": "Short Rest",
                 "longrest": "Long Rest"
