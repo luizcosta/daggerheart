@@ -780,7 +780,15 @@ export const weaponFeatures = {
                         mode: 2,
                         value: '1'
                     }
-                ]
+                ],
+                system: {
+                    rangeDependence: {
+                        enabled: true,
+                        range: 'melee',
+                        target: 'hostile',
+                        type: 'withinRange'
+                    }
+                }
             }
         ]
     },
@@ -1079,7 +1087,15 @@ export const weaponFeatures = {
                         mode: 2,
                         value: 'ITEM.@system.tier + 1'
                     }
-                ]
+                ],
+                system: {
+                    rangeDependence: {
+                        enabled: true,
+                        range: 'melee',
+                        target: 'hostile',
+                        type: 'withinRange'
+                    }
+                }
             }
         ]
     },
@@ -1208,7 +1224,7 @@ export const weaponFeatures = {
                 img: 'icons/skills/melee/strike-sword-slashing-red.webp',
                 changes: [
                     {
-                        key: 'system.bonuses.roll.primaryWeapon.attack',
+                        key: 'system.bonuses.roll.primaryWeapon.bonus',
                         mode: 2,
                         value: 1
                     }
@@ -1357,7 +1373,7 @@ export const weaponFeatures = {
                 actionType: 'action',
                 chatDisplay: true,
                 name: 'DAGGERHEART.CONFIG.WeaponFeature.timebending.actions.bendTime.name',
-                description: 'DAGGERHEART.CONFIG.WeaponFeature.actions.bendTime.description',
+                description: 'DAGGERHEART.CONFIG.WeaponFeature.timebending.actions.bendTime.description',
                 img: 'icons/magic/time/clock-spinning-gold-pink.webp'
             }
         ]
