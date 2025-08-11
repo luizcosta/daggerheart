@@ -359,6 +359,11 @@ export default class DhCharacterCreation extends HandlebarsApplicationMixin(Appl
                 context.community = { ...this.setup.community, compendium: 'communities' };
                 context.class = { ...this.setup.class, compendium: 'classes' };
                 context.subclass = { ...this.setup.subclass, compendium: 'subclasses' };
+
+                const allDomainData = CONFIG.DH.DOMAIN.allDomains();
+                context.classDomains = context.class.uuid
+                    ? context.class.system.domains.map(key => game.i18n.localize(allDomainData[key].label))
+                    : [];
                 context.domainCards = Object.keys(this.setup.domainCards).reduce((acc, x) => {
                     acc[x] = { ...this.setup.domainCards[x], compendium: 'domains' };
                     return acc;
@@ -378,7 +383,7 @@ export default class DhCharacterCreation extends HandlebarsApplicationMixin(Appl
                         uuid: suggestions.armor?.uuid,
                         taken: suggestions.armor?.uuid === this.equipment.armor?.uuid
                     },
-                    compendium: 'armors'
+                    compendium: 'armor'
                 };
                 context.primaryWeapon = {
                     ...this.equipment.primaryWeapon,
@@ -387,7 +392,7 @@ export default class DhCharacterCreation extends HandlebarsApplicationMixin(Appl
                         uuid: suggestions.primaryWeapon?.uuid,
                         taken: suggestions.primaryWeapon?.uuid === this.equipment.primaryWeapon?.uuid
                     },
-                    compendium: 'weapons'
+                    compendium: 'weapon'
                 };
                 context.secondaryWeapon = {
                     ...this.equipment.secondaryWeapon,
@@ -397,7 +402,7 @@ export default class DhCharacterCreation extends HandlebarsApplicationMixin(Appl
                         taken: suggestions.secondaryWeapon?.uuid === this.equipment.secondaryWeapon?.uuid
                     },
                     disabled: this.equipment.primaryWeapon?.system?.burden === burden.twoHanded.value,
-                    compendium: 'weapons'
+                    compendium: 'weapon'
                 };
                 context.inventory = {
                     take: suggestions.inventory.take,
@@ -495,11 +500,12 @@ export default class DhCharacterCreation extends HandlebarsApplicationMixin(Appl
     }
 
     static async viewCompendium(event, target) {
-        const type = target.dataset.compendium ?? target.dataset.type;
+        const type = target.dataset.compendium ?? target.dataset.type,
+            equipment = ['armor', 'weapon'];
 
         const presets = {
             compendium: 'daggerheart',
-            folder: type,
+            folder: equipment.includes(type) ? "equipments" : type,
             render: {
                 noFolder: true
             }
@@ -509,6 +515,12 @@ export default class DhCharacterCreation extends HandlebarsApplicationMixin(Appl
             presets.filter = {
                 'level.max': { key: 'level.max', value: 1 },
                 'system.domain': { key: 'system.domain', value: this.setup.class?.system.domains ?? null }
+            };
+
+        if (equipment.includes(type))
+            presets.filter = {
+                'system.tier': { key: 'system.tier', value: 1 },
+                'type': { key: 'type', value: type }
             };
 
         return (this.itemBrowser = await new ItemBrowser({ presets }).render({ force: true }));

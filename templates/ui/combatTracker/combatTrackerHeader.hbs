@@ -55,7 +55,7 @@
             <div class="encounter-fear-controls">
                 <div class="encounter-fear-dice-container">
                     <div class="encounter-control-fear-container">
-                        <img class="dice " src="../icons/svg/d12-grey.svg"/>
+                        <div class="dice d12"></div>
                         <i class="fas fa-skull encounter-control-fear"></i>
                     </div>
                     <div>{{fear}}</div>
@@ -63,7 +63,6 @@
                 <a class="encounter-countdowns" data-tooltip="{{localize "DAGGERHEART.APPLICATIONS.Countdown.title" type=(localize "DAGGERHEART.APPLICATIONS.Countdown.types.encounter")}}" data-action="openCountdowns"><i class="fa-solid fa-stopwatch"></i></a>
             </div>
         {{/if}}
-
         {{!-- Combat Status --}}
         <strong class="encounter-title">
             {{#if combats.length}}
@@ -78,14 +77,16 @@
         </strong>
 
         {{!-- Combat Controls --}}
-        {{#if hasCombat}}
-            <div class="control-buttons right flexrow">
-                <div class="spacer"></div>
-                <button type="button" class="encounter-context-menu inline-control combat-control icon fa-solid fa-ellipsis-vertical"
-                        {{#unless (and user.isGM hasCombat)}}disabled{{/unless}}></button>
-            </div>
-        {{/if}}
-
+        <div class="inner-controls">
+            {{#if hasCombat}}
+                <button data-action="openCountdowns">{{localize "DAGGERHEART.APPLICATIONS.CombatTracker.openCountdowns"}}</button>
+                <div class="control-buttons right flexrow">
+                    <div class="spacer"></div>
+                    <button type="button" class="encounter-context-menu inline-control combat-control icon fa-solid fa-ellipsis-vertical"
+                            {{#unless (and user.isGM hasCombat)}}disabled{{/unless}}></button>
+                </div>
+            {{/if}}
+        </div>
     </div>
 
 </header>

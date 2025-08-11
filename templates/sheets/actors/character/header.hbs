@@ -87,9 +87,9 @@
         </div>
         {{#if document.system.class.value}}
             <div class="domains-section">
-                {{#each document.system.class.value.system.domains as |domain|}}
+                {{#each document.system.domainData as |data|}}
                     <div class="domain">
-                        <img src="{{concat 'systems/daggerheart/assets/icons/domains/' domain '.svg'}}" alt="" data-tooltip="{{localize (concat 'DAGGERHEART.GENERAL.Domain.' domain '.label')}}" />
+                        <img src="{{data.src}}" alt="" data-tooltip="{{data.label}}" />
                     </div>
                 {{/each}}
             </div>
@@ -105,9 +105,9 @@
     </div>
 
     <div class="character-traits">
-        {{#each this.attributes as |attribute key|}}
-            <div class="trait" data-tooltip="{{#each attribute.verbs}}{{this}}<br>{{/each}}" data-action="rollAttribute" data-attribute="{{key}}" data-value="{{attribute.value}}">
-                <div class="trait-name">
+        {{#each this.attributes as |attribute key|}} 
+            <div class="trait" data-tooltip="<b>{{localize (concat 'DAGGERHEART.CONFIG.Traits.' key '.name') }}:</b><br>{{#each attribute.verbs}}{{this}}<br>{{/each}}" data-action="rollAttribute" data-attribute="{{key}}" data-value="{{attribute.value}}">
+                <div class="trait-name"> 
                     <span>{{localize (concat 'DAGGERHEART.CONFIG.Traits.' key '.short')}}</span>
                     {{#if attribute.tierMarked}}
                         <i class='fa-solid fa-circle'></i>
