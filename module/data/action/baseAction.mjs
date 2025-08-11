@@ -337,7 +337,7 @@ export default class DHBaseAction extends ActionMixin(foundry.abstract.DataModel
         if (!actor) return;
         const title = actor.isNPC
             ? game.i18n.localize('DAGGERHEART.GENERAL.reactionRoll')
-            : game.i18n.format('DAGGERHEART.UI.Chat.dualityRoll.abilityCheckTitle', {
+            : game.i18n.format('DAGGERHEART.UI.Chat.dualityRoll.abilityReactionCheckTitle', {
                   ability: game.i18n.localize(abilities[this.save.trait]?.label)
               });
         return actor.diceRoll({

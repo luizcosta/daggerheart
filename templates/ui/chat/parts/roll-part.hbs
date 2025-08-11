@@ -6,8 +6,12 @@
                 {{#if roll.isCritical}}
                     <span>{{localize "DAGGERHEART.GENERAL.criticalShort"}}</span>
                 {{else}}
-                    {{#if roll.result}}
-                        <span>{{localize "DAGGERHEART.GENERAL.withThing" thing=roll.result.label}}</span>
+                    {{#if (eq roll.type "reaction")}}
+                        {{!-- Display no hope/fear as per rules --}}
+                    {{else}}
+                        {{#if roll.result}}
+                            <span>{{localize "DAGGERHEART.GENERAL.withThing" thing=roll.result.label}}</span>
+                        {{/if}}
                     {{/if}}
                 {{/if}}
             </span>

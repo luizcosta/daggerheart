@@ -2265,7 +2265,8 @@
                     "title": "Domain Card"
                 },
                 "dualityRoll": {
-                    "abilityCheckTitle": "{ability} Check"
+                    "abilityCheckTitle": "{ability} Check",
+                    "abilityReactionCheckTitle": "{ability} Reaction Check"
                 },
                 "featureTitle": "Class Feature",
                 "healingRoll": {
