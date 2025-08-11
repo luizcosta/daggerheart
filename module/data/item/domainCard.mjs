@@ -88,14 +88,7 @@ export default class DHDomainCard extends BaseDataItem {
      * @returns {(string | { value: string, icons: string[] })[]} An array of localized strings and damage label objects.
      */
     _getLabels() {
-        const labels = [
-            ,
-            this.domainLabel,
-            {
-                value: `${this.recallCost}`, //converts the number to a string
-                icons: ['fa-bolt']
-            }
-        ];
+        const labels = [];
 
         if (this.type) labels.push(game.i18n.localize(`DAGGERHEART.CONFIG.DomainCardTypes.${this.type}`));
         if (this.domainLabel) labels.push(this.domainLabel);
