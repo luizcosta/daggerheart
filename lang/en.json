@@ -189,7 +189,11 @@
                     "title": "Multiclass Subclass",
                     "text": "Do you want to add this subclass as your multiclass subclass?"
                 },
-                "cannotRemoveCoreExperience": "You are using Levelup Auto. You cannot remove an experience given to you by the rule progression."
+                "cannotRemoveCoreExperience": "You are using Levelup Auto. You cannot remove an experience given to you by the rule progression.",
+                "companionLevelup": {
+                    "confirmTitle": "Companion Levelup",
+                    "confirmText": "Would you like to level up your companion {name} by {levelChange} levels at this time? (You can do it manually later)"
+                }
             },
             "Companion": {
                 "FIELDS": {
@@ -233,13 +237,14 @@
         },
         "APPLICATIONS": {
             "CharacterCreation": {
-                "setupTabs": {
+                "tabs": {
                     "ancestry": "Ancestry",
                     "community": "Community",
                     "class": "Class",
                     "experience": "Experience",
                     "traits": "Traits",
-                    "domainCards": "Domain Cards"
+                    "domainCards": "Domain Cards",
+                    "equipment": "Equipment"
                 },
                 "ancestryNamePlaceholder": "Your ancestry's name",
                 "buttonTitle": "Character Setup",
@@ -815,6 +820,10 @@
                 "dead": {
                     "name": "Dead",
                     "description": "The character is dead"
+                },
+                "defeated": {
+                    "name": "Defeated",
+                    "description": "This adversary is defeated."
                 },
                 "hidden": {
                     "name": "Hidden",
@@ -1875,7 +1884,8 @@
                 "tier3": "Tier 3",
                 "tier4": "tier 4",
                 "domains": "Domains",
-                "downtime": "Downtime"
+                "downtime": "Downtime",
+                "rules": "Rules"
             },
             "Tiers": {
                 "singular": "Tier",
@@ -1944,6 +1954,7 @@
             "itemResource": "Item Resource",
             "label": "Label",
             "level": "Level",
+            "levelShort": "Lv",
             "levelUp": "Level Up",
             "loadout": "Loadout",
             "max": "Max",
@@ -2091,7 +2102,12 @@
                 "FIELDS": {
                     "displayFear": { "label": "Fear Display" },
                     "dualityColorScheme": { "label": "Chat Style" },
-                    "showGenericStatusEffects": { "label": "Show Foundry Status Effects" }
+                    "showGenericStatusEffects": { "label": "Show Foundry Status Effects" },
+                    "expandedTitle": "Auto-expand Descriptions",
+                    "extendCharacterDescriptions": { "label": "Characters" },
+                    "extendAdversaryDescriptions": { "label": "Adversaries" },
+                    "extendEnvironmentDescriptions": { "label": "Environments" },
+                    "extendItemDescriptions": { "label": "Items" }
                 },
                 "fearDisplay": {
                     "token": "Tokens",
@@ -2108,6 +2124,13 @@
                     "damageReductionRulesDefault": {
                         "label": "Damage Reduction Rules Default",
                         "hint": "Wether using armor and reductions has rules on by default"
+                    },
+                    "defeated": {
+                        "enabled": { "label": "Enabled" },
+                        "overlay": { "label": "Overlay Effect" },
+                        "characterDefault": { "label": "Character Default Defeated Status" },
+                        "adversaryDefault": { "label": "Adversary Default Defeated Status" },
+                        "companionDefault": { "label": "Companion Default Defeated Status" }
                     },
                     "hopeFear": {
                         "label": "Hope & Fear",
@@ -2140,6 +2163,9 @@
                         "label": "Players Can Manually Edit Character Settings",
                         "hint": "Players are allowed to access the manual Character Settings and change their statistics beyond the rules."
                     }
+                },
+                "defeated": {
+                    "title": "Defeated Handling"
                 }
             },
             "Homebrew": {
@@ -2379,7 +2405,8 @@
                 "rulesOn": "Rules On",
                 "rulesOff": "Rules Off",
                 "remainingUses": "Uses refresh on {type}",
-                "rightClickExtand": "Right-Click to extand"
+                "rightClickExtand": "Right-Click to extand",
+                "companionPartnerLevelBlock": "The companion needs an assigned partner to level up."
             }
         }
     }

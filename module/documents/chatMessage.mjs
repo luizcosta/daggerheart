@@ -1,6 +1,5 @@
 export default class DhpChatMessage extends foundry.documents.ChatMessage {
     targetHook = null;
-    targetSelection = null;
 
     async renderHTML() {
         const actor = game.actors.get(this.speaker.actor);
@@ -24,7 +23,7 @@ export default class DhpChatMessage extends foundry.documents.ChatMessage {
 
     /** @inheritDoc */
     prepareData() {
-        if (this.isAuthor && this.targetSelection === null) this.targetSelection = this.system.targets?.length > 0;
+        if (this.isAuthor && this.targetSelection === undefined) this.targetSelection = this.system.targets?.length > 0;
         super.prepareData();
     }
 
@@ -70,9 +69,13 @@ export default class DhpChatMessage extends foundry.documents.ChatMessage {
             }
         }
         
-        if(!game.user.isGM && !this.isAuthor && !this.speakerActor?.isOwner) {
-            const buttons = html.querySelectorAll(".ability-card-footer > .ability-use-button");
-            buttons.forEach(b => b.remove());
+        if(!game.user.isGM) {
+            const applyButtons = html.querySelector(".apply-buttons");
+            applyButtons?.remove();
+            if(!this.isAuthor && !this.speakerActor?.isOwner) {
+                const buttons = html.querySelectorAll(".ability-card-footer > .ability-use-button");
+                buttons.forEach(b => b.remove());
+            }
         }
     }
 

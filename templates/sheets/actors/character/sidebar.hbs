@@ -13,7 +13,7 @@
             </div>
         {{/if}}
         <a class="death-roll-btn" data-tooltip="DAGGERHEART.UI.Tooltip.makeDeathMove" {{#if
-            isDeath}}data-action="makeDeathMove" {{/if}}><i class="fas fa-skull death-save"></i></a>
+            isDeath}}data-action="makeDeathMove" {{/if}}><i class="fa-solid fa-skull death-save"></i></a>
     </div>
     <div class="info-section">
         <div class="resources-section">
@@ -116,7 +116,14 @@
             </div>
             <ul class="items-sidebar-list">
                 {{#if document.system.usedUnarmed}}
-                    {{> 'daggerheart.inventory-item' item=document.system.usedUnarmed type='attack' isSidebar=true}}
+                    {{> 'daggerheart.inventory-item'
+                    item=document.system.usedUnarmed
+                    type='action'
+                    hideTags=true
+                    hideDescription=true
+                    hideResources=true
+                    noExtensible=true
+                    }}
                 {{/if}}
                 {{#each document.items as |item|}}
                 {{#if item.system.equipped}}
