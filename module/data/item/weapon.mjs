@@ -1,5 +1,5 @@
 import AttachableItem from './attachableItem.mjs';
-import { ActionsField, ActionField } from '../fields/actionField.mjs';
+import { ActionField } from '../fields/actionField.mjs';
 
 export default class DHWeapon extends AttachableItem {
     /** @inheritDoc */
@@ -18,12 +18,23 @@ export default class DHWeapon extends AttachableItem {
         const fields = foundry.data.fields;
         return {
             ...super.defineSchema(),
-            tier: new fields.NumberField({ required: true, integer: true, initial: 1, min: 1, label: "DAGGERHEART.GENERAL.Tiers.singular" }),
+            tier: new fields.NumberField({
+                required: true,
+                integer: true,
+                initial: 1,
+                min: 1,
+                label: 'DAGGERHEART.GENERAL.Tiers.singular'
+            }),
             equipped: new fields.BooleanField({ initial: false }),
 
             //SETTINGS
-            secondary: new fields.BooleanField({ initial: false, label: "DAGGERHEART.ITEMS.Weapon.secondaryWeapon" }),
-            burden: new fields.StringField({ required: true, choices: CONFIG.DH.GENERAL.burden, initial: 'oneHanded', label: "DAGGERHEART.GENERAL.burden" }),
+            secondary: new fields.BooleanField({ initial: false, label: 'DAGGERHEART.ITEMS.Weapon.secondaryWeapon' }),
+            burden: new fields.StringField({
+                required: true,
+                choices: CONFIG.DH.GENERAL.burden,
+                initial: 'oneHanded',
+                label: 'DAGGERHEART.GENERAL.burden'
+            }),
             weaponFeatures: new fields.ArrayField(
                 new fields.SchemaField({
                     value: new fields.StringField({
@@ -209,26 +220,23 @@ export default class DHWeapon extends AttachableItem {
      * @returns {(string | { value: string, icons: string[] })[]} An array of localized strings and damage label objects.
      */
     _getLabels() {
+        const labels = [];
         const { roll, range, damage } = this.attack;
 
-        const labels = [
-            game.i18n.localize(`DAGGERHEART.CONFIG.Traits.${roll.trait}.short`),
-            game.i18n.localize(`DAGGERHEART.CONFIG.Range.${range}.short`)
-        ];
+        if (roll.trait) labels.push(game.i18n.localize(`DAGGERHEART.CONFIG.Traits.${roll.trait}.short`));
+        if (range) labels.push(game.i18n.localize(`DAGGERHEART.CONFIG.Range.${range}.short`));
 
         for (const { value, type } of damage.parts) {
-            const str = [value.dice];
-            if (value.bonus) str.push(value.bonus.signedString());
+            const str = Roll.replaceFormulaData(value.getFormula(), this.actor?.getRollData() ?? {});
 
             const icons = Array.from(type)
                 .map(t => CONFIG.DH.GENERAL.damageTypes[t]?.icon)
                 .filter(Boolean);
 
-            const labelValue = str.join('');
             if (icons.length === 0) {
-                labels.push(labelValue);
+                labels.push(str);
             } else {
-                labels.push({ value: labelValue, icons });
+                labels.push({ value: str, icons });
             }
         }
 

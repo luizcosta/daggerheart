@@ -77,6 +77,7 @@ export default class DHDomainCard extends BaseDataItem {
         const tags = [
             game.i18n.localize(`DAGGERHEART.CONFIG.DomainCardTypes.${this.type}`),
             this.domainLabel,
+            `${game.i18n.localize('DAGGERHEART.GENERAL.levelShort')}: ${this.level}`,
             `${game.i18n.localize('DAGGERHEART.ITEMS.DomainCard.recallCost')}: ${this.recallCost}`
         ];
 
@@ -88,15 +89,16 @@ export default class DHDomainCard extends BaseDataItem {
      * @returns {(string | { value: string, icons: string[] })[]} An array of localized strings and damage label objects.
      */
     _getLabels() {
-        const labels = [
-            game.i18n.localize(`DAGGERHEART.CONFIG.DomainCardTypes.${this.type}`),
-            this.domainLabel,
-            {
+        const labels = [];
+
+        if (this.type) labels.push(game.i18n.localize(`DAGGERHEART.CONFIG.DomainCardTypes.${this.type}`));
+        if (this.domainLabel) labels.push(this.domainLabel);
+        if (this.recallCost) {
+            labels.push({
                 value: `${this.recallCost}`, //converts the number to a string
                 icons: ['fa-bolt']
-            }
-        ];
-
+            });
+        }
         return labels;
     }
 }

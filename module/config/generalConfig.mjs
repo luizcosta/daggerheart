@@ -164,37 +164,47 @@ export const healingTypes = {
     }
 };
 
-export const conditions = {
-    vulnerable: {
-        id: 'vulnerable',
-        name: 'DAGGERHEART.CONFIG.Condition.vulnerable.name',
-        icon: 'icons/magic/control/silhouette-fall-slip-prone.webp',
-        description: 'DAGGERHEART.CONFIG.Condition.vulnerable.description'
-    },
-    hidden: {
-        id: 'hidden',
-        name: 'DAGGERHEART.CONFIG.Condition.hidden.name',
-        icon: 'icons/magic/perception/silhouette-stealth-shadow.webp',
-        description: 'DAGGERHEART.CONFIG.Condition.hidden.description'
-    },
-    restrained: {
-        id: 'restrained',
-        name: 'DAGGERHEART.CONFIG.Condition.restrained.name',
-        icon: 'icons/magic/control/debuff-chains-shackle-movement-red.webp',
-        description: 'DAGGERHEART.CONFIG.Condition.restrained.description'
+export const defeatedConditions = {
+    defeated: {
+        id: 'defeated',
+        name: 'DAGGERHEART.CONFIG.Condition.defeated.name',
+        img: 'icons/magic/control/fear-fright-mask-orange.webp',
+        description: 'DAGGERHEART.CONFIG.Condition.defeated.description'
     },
     unconscious: {
         id: 'unconscious',
         name: 'DAGGERHEART.CONFIG.Condition.unconscious.name',
-        icon: 'icons/magic/control/sleep-bubble-purple.webp',
+        img: 'icons/magic/control/sleep-bubble-purple.webp',
         description: 'DAGGERHEART.CONFIG.Condition.unconscious.description'
     },
     dead: {
         id: 'dead',
         name: 'DAGGERHEART.CONFIG.Condition.dead.name',
-        icon: 'icons/magic/death/grave-tombstone-glow-teal.webp',
+        img: 'icons/magic/death/grave-tombstone-glow-teal.webp',
         description: 'DAGGERHEART.CONFIG.Condition.dead.description'
     }
+};
+
+export const conditions = {
+    vulnerable: {
+        id: 'vulnerable',
+        name: 'DAGGERHEART.CONFIG.Condition.vulnerable.name',
+        img: 'icons/magic/control/silhouette-fall-slip-prone.webp',
+        description: 'DAGGERHEART.CONFIG.Condition.vulnerable.description'
+    },
+    hidden: {
+        id: 'hidden',
+        name: 'DAGGERHEART.CONFIG.Condition.hidden.name',
+        img: 'icons/magic/perception/silhouette-stealth-shadow.webp',
+        description: 'DAGGERHEART.CONFIG.Condition.hidden.description'
+    },
+    restrained: {
+        id: 'restrained',
+        name: 'DAGGERHEART.CONFIG.Condition.restrained.name',
+        img: 'icons/magic/control/debuff-chains-shackle-movement-red.webp',
+        description: 'DAGGERHEART.CONFIG.Condition.restrained.description'
+    },
+    ...defeatedConditions
 };
 
 export const defaultRestOptions = {

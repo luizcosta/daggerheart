@@ -2,6 +2,7 @@ import { emitAsGM, GMUpdateEvent } from '../systemRegistration/socket.mjs';
 import { LevelOptionType } from '../data/levelTier.mjs';
 import DHFeature from '../data/item/feature.mjs';
 import { damageKeyToNumber } from '../helpers/utils.mjs';
+import DhCompanionLevelUp from '../applications/levelup/companionLevelup.mjs';
 
 export default class DhpActor extends Actor {
     /**
@@ -142,9 +143,6 @@ export default class DhpActor extends Actor {
                         }, {})
                     });
                     this.update(getUpdate());
-                    if (this.system.companion) {
-                        this.system.companion.update(getUpdate());
-                    }
                 }
 
                 if (subclassFeatureState.class) {
@@ -195,10 +193,6 @@ export default class DhpActor extends Actor {
                 }
             });
             this.sheet.render();
-
-            if (this.system.companion) {
-                this.system.companion.updateLevel(newLevel);
-            }
         }
     }
 
@@ -219,16 +213,6 @@ export default class DhpActor extends Actor {
                             core: true
                         }
                     });
-
-                    if (this.system.companion) {
-                        await this.system.companion.update({
-                            [`system.experiences.${experienceKey}`]: {
-                                name: '',
-                                value: experience.modifier,
-                                core: true
-                            }
-                        });
-                    }
                 }
             }
 
@@ -405,6 +389,7 @@ export default class DhpActor extends Actor {
             };
         }
 
+        const levelChange = this.system.levelData.level.changed - this.system.levelData.level.current;
         await this.update({
             system: {
                 levelData: {
@@ -417,8 +402,21 @@ export default class DhpActor extends Actor {
         });
         this.sheet.render();
 
-        if (this.system.companion) {
-            this.system.companion.updateLevel(this.system.levelData.level.changed);
+        if (this.system.companion && !this.system.companion.system.levelData.canLevelUp) {
+            const confirmed = await foundry.applications.api.DialogV2.confirm({
+                window: {
+                    title: game.i18n.localize('DAGGERHEART.ACTORS.Character.companionLevelup.confirmTitle')
+                },
+                content: game.i18n.format('DAGGERHEART.ACTORS.Character.companionLevelup.confirmText', {
+                    name: this.system.companion.name,
+                    levelChange: levelChange
+                })
+            });
+
+            if (!confirmed) return;
+
+            await this.system.companion.updateLevel(this.system.companion.system.levelData.level.current + levelChange);
+            new DhCompanionLevelUp(this.system.companion).render({ force: true });
         }
     }
 
@@ -719,5 +717,22 @@ export default class DhpActor extends Actor {
                 key: 'hitPoints',
                 value: 1
             });
+    }
+
+    async toggleDefeated(defeatedState) {
+        const settings = game.settings.get(CONFIG.DH.id, CONFIG.DH.SETTINGS.gameSettings.Automation).defeated;
+        const { unconscious, defeated, dead } = CONFIG.DH.GENERAL.conditions;
+        const defeatedConditions = new Set([unconscious.id, defeated.id, dead.id]);
+        if (!defeatedState) {
+            for (let defeatedId of defeatedConditions) {
+                await this.toggleStatusEffect(defeatedId, { overlay: settings.overlay, active: defeatedState });
+            }
+        } else {
+            const noDefeatedConditions = this.statuses.intersection(defeatedConditions).size === 0;
+            if (noDefeatedConditions) {
+                const condition = settings[`${this.type}Default`];
+                await this.toggleStatusEffect(condition, { overlay: settings.overlay, active: defeatedState });
+            }
+        }
     }
 }
