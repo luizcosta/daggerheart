@@ -42,4 +42,32 @@ export default class DHAttackAction extends DHDamageAction {
 
         return result;
     }
+
+    /**
+     * Generate a localized label array for this item subtype.
+     * @returns {(string | { value: string, icons: string[] })[]} An array of localized strings and damage label objects.
+     */
+    _getLabels() {
+        const labels = [];
+        const { roll, range, damage } = this;
+
+        if (roll.trait) labels.push(game.i18n.localize(`DAGGERHEART.CONFIG.Traits.${roll.trait}.short`))
+        if (range) labels.push(game.i18n.localize(`DAGGERHEART.CONFIG.Range.${range}.short`));
+
+        for (const { value, type } of damage.parts) {
+            const str = Roll.replaceFormulaData(value.getFormula(), this.actor?.getRollData() ?? {});
+
+            const icons = Array.from(type)
+                .map(t => CONFIG.DH.GENERAL.damageTypes[t]?.icon)
+                .filter(Boolean);
+
+            if (icons.length === 0) {
+                labels.push(str);
+            } else {
+                labels.push({ value: str, icons });
+            }
+        }
+
+        return labels;
+    }
 }
