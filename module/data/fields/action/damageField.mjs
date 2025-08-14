@@ -10,7 +10,7 @@ export default class DamageField extends fields.SchemaField {
                 initial: false,
                 label: 'DAGGERHEART.ACTIONS.Settings.includeBase.label'
             }),
-            direct: new fields.BooleanField({ initial: false, label: "DAGGERHEART.CONFIG.DamageType.direct.name" })
+            direct: new fields.BooleanField({ initial: false, label: 'DAGGERHEART.CONFIG.DamageType.direct.name' })
         };
         super(damageFields, options, context);
     }
@@ -30,7 +30,7 @@ export class DHActionDiceData extends foundry.abstract.DataModel {
             bonus: new fields.NumberField({ nullable: true, initial: null, label: 'Bonus' }),
             custom: new fields.SchemaField({
                 enabled: new fields.BooleanField({ label: 'Custom Formula' }),
-                formula: new FormulaField({ label: 'Formula' })
+                formula: new FormulaField({ label: 'Formula', initial: '' })
             })
         };
     }
