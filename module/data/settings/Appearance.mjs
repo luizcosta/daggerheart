@@ -73,6 +73,10 @@ export default class DhAppearance extends foundry.abstract.DataModel {
                 label: 'DAGGERHEART.SETTINGS.Appearance.FIELDS.extendItemDescriptions.label'
             }),
             expandRollMessage: new fields.SchemaField({
+                desc: new fields.BooleanField({
+                    initial: false,
+                    label: 'DAGGERHEART.SETTINGS.Appearance.FIELDS.expandRollMessageDesc.label'
+                }),
                 roll: new fields.BooleanField({
                     initial: false,
                     label: 'DAGGERHEART.SETTINGS.Appearance.FIELDS.expandRollMessageRoll.label'
