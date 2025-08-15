@@ -12,7 +12,7 @@
             <div class="wrapper">
                 {{#each damage as | roll index | }}
                     <fieldset>
-                        <legend>{{log @root}}
+                        <legend>
                             {{localize (concat 'DAGGERHEART.CONFIG.HealingType.' index '.inChatRoll')}} <div class="roll-formula">{{localize "DAGGERHEART.GENERAL.total"}}: {{roll.total}}</div>{{#if (and (eq index "hitPoints")../isDirect)}} <div class="roll-formula">{{localize "DAGGERHEART.CONFIG.DamageType.direct.short"}}</div>{{/if}}
                         </legend>
                         {{#each roll.parts}}
