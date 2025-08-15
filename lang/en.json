@@ -64,6 +64,14 @@
                     "exactHint": "The Character's Tier is used if empty",
                     "label": "Beastform"
                 },
+                "damage": {
+                    "multiplier": "Multiplier",
+                    "flatMultiplier": "Flat Multiplier"
+                },
+                "general": {
+                    "customFormula": "Custom Formula",
+                    "formula": "Formula"
+                },
                 "displayInChat": "Display in chat"
             },
             "RollField": {
