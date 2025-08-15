@@ -2109,9 +2109,9 @@
                     "extendEnvironmentDescriptions": { "label": "Environments" },
                     "extendItemDescriptions": { "label": "Items" },
                     "expandRollMessage": "Auto-expand Roll Message",
-                    "expandRollMessageRoll": { "label": "Roll" },
+                    "expandRollMessageRoll": { "label": "Formula" },
                     "expandRollMessageDamage": { "label": "Damage/Healing" },
-                    "expandRollMessageTarget": { "label": "Targets" }
+                    "expandRollMessageTarget": { "label": "Target" }
                 },
                 "fearDisplay": {
                     "token": "Tokens",
