@@ -67,6 +67,19 @@ export default class DhpChatMessage extends foundry.documents.ChatMessage {
                     html.classList.add('critical');
                     break;
             }
+
+            const autoExpandRoll = game.settings.get(CONFIG.DH.id, CONFIG.DH.SETTINGS.gameSettings.appearance).expandRollMessage,
+                rollSections = html.querySelectorAll(".roll-part");
+            rollSections.forEach(s => {
+                if(s.classList.contains("roll-section")) {
+                    const toExpand = s.querySelector('[data-action="expandRoll"]');
+                    toExpand.classList.toggle("expanded", autoExpandRoll.roll);
+                } else if(s.classList.contains("damage-section"))
+                    s.classList.toggle("expanded", autoExpandRoll.damage);
+                else if(s.classList.contains("target-section"))
+                    s.classList.toggle("expanded", autoExpandRoll.target);
+            })
+
         }
         
         if(!game.user.isGM) {

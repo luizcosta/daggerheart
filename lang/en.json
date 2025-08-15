@@ -2107,7 +2107,11 @@
                     "extendCharacterDescriptions": { "label": "Characters" },
                     "extendAdversaryDescriptions": { "label": "Adversaries" },
                     "extendEnvironmentDescriptions": { "label": "Environments" },
-                    "extendItemDescriptions": { "label": "Items" }
+                    "extendItemDescriptions": { "label": "Items" },
+                    "expandRollMessage": "Auto-expand Roll Message",
+                    "expandRollMessageRoll": { "label": "Roll" },
+                    "expandRollMessageDamage": { "label": "Damage/Healing" },
+                    "expandRollMessageTarget": { "label": "Targets" }
                 },
                 "fearDisplay": {
                     "token": "Tokens",
