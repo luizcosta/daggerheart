@@ -47,7 +47,7 @@ Now you should be able to build the app using `npm start`
 
 ## Contributing
 
-Looking to contribute to the project? Look no further, check out our [contributing guide](contributing.md), and keep the [Code of Conduct](coc.md) in mind when working on things.
+Looking to contribute to the project? Look no further, check out our [contributing guide](CONTRIBUTING.md), and keep the [Code of Conduct](COC.md) in mind when working on things.
 
 ## Disclaimer:
 
