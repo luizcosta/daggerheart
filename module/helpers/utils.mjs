@@ -177,7 +177,7 @@ Roll.replaceFormulaData = function (formula, data = {}, { missing, warn = false 
     return nativeReplaceFormulaData(formula, data, { missing, warn });
 };
 
-foundry.dice.terms.Die.MODIFIERS.sc = 'selfCorrecting';
+foundry.utils.setProperty(foundry, 'dice.terms.Die.MODIFIERS.sc', 'selfCorrecting');
 
 /**
  * Return the configured value as result if 1 is rolled
